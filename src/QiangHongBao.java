@@ -3,24 +3,24 @@ import java.util.Scanner;
 
 public class QiangHongBao {
 	public static void main(String[] args) {
-		System.out.println("--------Î¢ĞÅÇÀºì°ü----------");
+		System.out.println("--------å¾®ä¿¡æŠ¢çº¢åŒ…----------");
 		Scanner sc = new Scanner(System.in);
-		System.out.println("ÇëÊäÈëºì°ü½ğ¶î£º");
+		System.out.println("è¯·è¾“å…¥çº¢åŒ…é‡‘é¢ï¼š");
 		double total = sc.nextDouble();
-		System.out.println("ÇëÊäÈëºì°ü¸öÊı£º");
+		System.out.println("è¯·è¾“å…¥çº¢åŒ…ä¸ªæ•°ï¼š");
 		int bagCount = sc.nextInt();
 
 		Random rd = new Random();
-		double min = 0.01;// ×îÉÙÒ»·ÖÇ®
+		double min = 0.01;// æœ€å°‘ä¸€åˆ†é’±
 
 		for (int i = 1; i < bagCount; i++) {
-			double max = total - min * (bagCount - i + 1);// ³ıÈ¥Ã¿¸ö°üÖĞµÄÒ»·ÖÇ®£¬Ê£ÏÂµÄÇ®¶¼¿ÉÒÔÓÃÀ´Ëæ»ú
-			double bound = (double) (rd.nextInt((int) (max * 100)) / (100 * (bagCount - i)));// ÎªÁË·ÀÖ¹Ç°ÃæµÄÈË°Ñºì°üÀïµÄÇ®ÄÃ¹â£¬×öÁËÏŞÖÆ
+			double max = total - min * (bagCount - i + 1);// é™¤å»æ¯ä¸ªåŒ…ä¸­çš„ä¸€åˆ†é’±ï¼Œå‰©ä¸‹çš„é’±éƒ½å¯ä»¥ç”¨æ¥éšæœº
+			double bound = (double) (rd.nextInt((int) (max * 100)) / (100 * (bagCount - i)));// ä¸ºäº†é˜²æ­¢å‰é¢çš„äººæŠŠçº¢åŒ…é‡Œçš„é’±æ‹¿å…‰ï¼Œåšäº†é™åˆ¶
 			double money = bound + min;
-			System.out.println("µÚ" + i + "¸öºì°üÊÇ£º" + String.format("%.2f", money) + "Ôª");
+			System.out.println("ç¬¬" + i + "ä¸ªçº¢åŒ…æ˜¯ï¼š" + String.format("%.2f", money) + "å…ƒ");
 			total = total - money;
 		}
-		System.out.println("µÚ" + bagCount + "¸öºì°üÊÇ£º" + String.format("%.2f", total) + "Ôª");
+		System.out.println("ç¬¬" + bagCount + "ä¸ªçº¢åŒ…æ˜¯ï¼š" + String.format("%.2f", total) + "å…ƒ");
 		sc.close();
 	}
 }
